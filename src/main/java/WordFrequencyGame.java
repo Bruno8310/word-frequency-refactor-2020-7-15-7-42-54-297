@@ -17,7 +17,7 @@ public class WordFrequencyGame {
             return inputStr + " 1";
         } else {
             try {
-                List<WordInfo> inputList = new ArrayList<>();
+                List<WordInfo> inputList = calculteWorldFrequency(inputStr);
 
                 for (String word : words) {
                     WordInfo wordInfo = new WordInfo(word, 1);
@@ -47,6 +47,10 @@ public class WordFrequencyGame {
                 return CALCULATE_MESSAGE;
             }
         }
+    }
+
+    private List<WordInfo> calculteWorldFrequency(String inputStr) {
+        return null;
     }
 
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> inputList) {
