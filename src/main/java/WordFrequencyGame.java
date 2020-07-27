@@ -1,11 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringJoiner;
-import java.io.CharArrayWriter;
-
-import java.time.LocalDateTime;
+import java.util.*;
 
 public class WordFrequencyGame {
 
@@ -16,14 +9,13 @@ public class WordFrequencyGame {
 
     public String getResult(String inputStr) {
 
-
         if (inputStr.split(SPLIT_PATTERN).length==1) {
             return inputStr + " 1";
         } else {
 
             try {
 
-                String[] arr = inputStr.split(SPLIT_PATTERN);
+                String[] wordinfo = inputStr.split(SPLIT_PATTERN);
 
                 List<Input> inputList = new ArrayList<>();
                 for (String s : arr) {
