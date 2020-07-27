@@ -2,11 +2,13 @@ import java.util.*;
 
 public class WordFrequencyGame {
 
-    private final String SPLIT_PATTERN = "\\s+";
+    private  final String SPLIT_PATTERN = "\\s+";
 
     private final String CALCULATE_MESSAGE = "Calculate Error";
 
     private final String LINE = "\n";
+
+    private final String SPACE = " ";
 
 
     public String getResult(String inputStr) {
@@ -17,17 +19,18 @@ public class WordFrequencyGame {
 
             try {
 
-                String[] words = inputStr.split(SPLIT_PATTERN);
-
                 List<WordInfo> inputList = new ArrayList<>();
+
                 for (String word : words) {
                     WordInfo wordInfo = new WordInfo(word, 1);
                     inputList.add(wordInfo);
                 }
 
-                Map<String, List<WordInfo>> wordInfosMap =getListMap(inputList);
+                Map<String, List<WordInfo>> wordInfosMap = getListMap(inputList);
 
                 List<WordInfo> wordInfos = new ArrayList<>();
+
+
                 for (Map.Entry<String, List<WordInfo>> entry : wordInfosMap.entrySet()) {
                     WordInfo input = new WordInfo(entry.getKey(), entry.getValue().size());
                     wordInfos.add(input);
@@ -38,7 +41,7 @@ public class WordFrequencyGame {
 
                 StringJoiner joiner = new StringJoiner(LINE);
                 for (WordInfo w : inputList) {
-                    String s = w.getValue() + " " +w.getWordCount();
+                    String s = w.getValue() + SPACE + w.getWordCount();
                     joiner.add(s);
                 }
                 return joiner.toString();
@@ -48,15 +51,23 @@ public class WordFrequencyGame {
         }
     }
 
+
+    private List<WordInfo> calculateWordFRequency(String inputStr) {
+
+        List<String> words = Arrays.asList(inputStr.split(SPLIT_PATTERN));
+        List<WordInfo> wordInfos = new ArrayList<>();
+
+        return null;
+    }
+
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> inputList) {
         Map<String, List<WordInfo>> wordInfosMap = new HashMap<>();
-        for (WordInfo input : inputList){
+        for (WordInfo input : inputList) {
             if (!wordInfosMap.containsKey(input.getValue())) {
                 ArrayList arr = new ArrayList<>();
                 arr.add(input);
                 wordInfosMap.put(input.getValue(), arr);
-            }
-            else {
+            } else {
                 wordInfosMap.get(input.getValue()).add(input);
             }
         }
