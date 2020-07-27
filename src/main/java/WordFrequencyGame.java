@@ -9,20 +9,22 @@ import java.time.LocalDateTime;
 
 public class WordFrequencyGame {
 
-    private final String splitPattern = "\\s+";
+    private final String SPLIT_PATTERN = "\\s+";
+
+    private final String CALCULATE_MESSAGE = "Calculate Error";
 
 
     public String getResult(String inputStr) {
 
 
-        if (inputStr.split(splitPattern).length==1) {
+        if (inputStr.split(SPLIT_PATTERN).length==1) {
             return inputStr + " 1";
         } else {
 
             try {
 
                 //split the input string with 1 to n pieces of spaces
-                String[] arr = inputStr.split(splitPattern);
+                String[] arr = inputStr.split(SPLIT_PATTERN);
 
                 List<Input> inputList = new ArrayList<>();
                 for (String s : arr) {
@@ -49,7 +51,7 @@ public class WordFrequencyGame {
                 }
                 return joiner.toString();
             } catch (Exception e) {
-                return "Calculate Error";
+                return CALCULATE_MESSAGE;
             }
         }
     }
