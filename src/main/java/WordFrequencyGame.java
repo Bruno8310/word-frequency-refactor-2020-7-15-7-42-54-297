@@ -21,13 +21,14 @@ public class WordFrequencyGame {
         } catch (Exception e) {
             return CALCULATE_MESSAGE;
         }
-        }
+    }
 
     private List<WordInfo> calculteWorldFrequency(String inputStr) {
         List<WordInfo> wordInfos = new ArrayList<>();
         List<String> words = Arrays.asList(inputStr.split(SPLIT_PATTERN));
         for (String word : new HashSet<>(words)) {
-
+            int wordCount = (int) words.stream().filter(word::equals).count();
+            wordInfos.add(new WordInfo(word, wordCount));
         }
         return wordInfos;
     }
