@@ -26,7 +26,7 @@ public class WordFrequencyGame {
     private List<WordInfo> calculteWorldFrequency(String inputStr) {
         List<WordInfo> wordInfos = new ArrayList<>();
         List<String> words = Arrays.asList(inputStr.split(SPLIT_PATTERN));
-        for (String unitWord : new HashSet<>(words)) {
+        for (String word : new HashSet<>(words)) {
 
         }
         return wordInfos;
