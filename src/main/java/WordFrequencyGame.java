@@ -32,7 +32,7 @@ public class WordFrequencyGame {
         return wordInfos;
     }
 
-    private String generateWorldFrequenceResult(List<WordInfo>  inputList) {
+    private String  (List<WordInfo>  inputList) {
         StringJoiner joiner = new StringJoiner(LINE);
         for (WordInfo w : inputList) {
             String s = w.getValue() + SPACE + w.getWordCount();
