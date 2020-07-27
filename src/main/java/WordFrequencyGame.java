@@ -16,9 +16,7 @@ public class WordFrequencyGame {
         if (inputStr.split(SPLIT_PATTERN).length==1) {
             return inputStr + " 1";
         } else {
-
             try {
-
                 List<WordInfo> inputList = new ArrayList<>();
 
                 for (String word : words) {
@@ -49,15 +47,6 @@ public class WordFrequencyGame {
                 return CALCULATE_MESSAGE;
             }
         }
-    }
-
-
-    private List<WordInfo> calculateWordFRequency(String inputStr) {
-
-        List<String> words = Arrays.asList(inputStr.split(SPLIT_PATTERN));
-        List<WordInfo> wordInfos = new ArrayList<>();
-
-        return null;
     }
 
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> inputList) {
