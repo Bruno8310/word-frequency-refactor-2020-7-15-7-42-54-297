@@ -6,6 +6,8 @@ public class WordFrequencyGame {
 
     private final String CALCULATE_MESSAGE = "Calculate Error";
 
+    private final String LINE = "\n";
+
 
     public String getResult(String inputStr) {
 
@@ -34,7 +36,7 @@ public class WordFrequencyGame {
 
                 inputList.sort((firstWord, secondWord) -> secondWord.getWordCount() - firstWord.getWordCount());
 
-                StringJoiner joiner = new StringJoiner("\n");
+                StringJoiner joiner = new StringJoiner(LINE);
                 for (WordInfo w : inputList) {
                     String s = w.getValue() + " " +w.getWordCount();
                     joiner.add(s);
